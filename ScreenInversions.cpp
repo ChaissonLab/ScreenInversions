@@ -192,7 +192,7 @@ void ScreenInversions() {
 			float frac = 0.01;
 
 			if (invCoords[0] > frac * query.length and invCoords[2] < (1-frac)*query.length) {
-				cout << readName << " " << res << endl;
+				cerr << readName << " " << res << endl;
 				sem_wait(&semaphores.writer);
 				tableOut << chrom << "\t" << pos + invCoords[2] << "\t" << pos + invCoords[3] + wordSize << "\t" << readName << "\t" << res << endl;
 				sem_post(&semaphores.writer);
